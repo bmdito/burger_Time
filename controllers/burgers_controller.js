@@ -49,4 +49,17 @@ router.put("/burgers/:id", function(req,res){
     });
 });
 
+router.delete("/burgers/:id", function(req, res){
+    var condition = "id = " + req.params.id;
+    if(result.affectedRows == 0){
+        return res.status(404).end();
+    } else {
+        burger.delete(condition, function(){
+            res.redirect("/burgers");
+        });
+        
+    }
+})
+
+
 module.exports = router;

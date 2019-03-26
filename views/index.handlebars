@@ -1,18 +1,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div id="title">
+        <div class="col-md-12" id="title">
+            <div> 
                 <h1>Burger Time!</h1>
             </div>
         </div>    
     </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <div id="burgHit">
+    <div class="col-md-4" id="burgHit">
+        <div>
 
-        <h2> Burger Hit List!</h2>
+        <h4> Burger Hit List!</h4>
 
         <ul>
             {{#each burgers}}
@@ -39,7 +39,7 @@
     <div class="col-md-4">
         <div id="burgEat">
 
-        <h2> Burgers You have devoured!</h2>
+        <h4> Burgers You have devoured!</h4>
 
         <ul>
             {{#each burgers}}
@@ -50,6 +50,7 @@
                     <form action="burgers/{{this.id}}?_method=PUT" method="POST">
                         <input type="hidden" name="devoured" value="false">
                         <button type="submit">regurgitate!</button>
+                        
                     </form>
                 
                 </li>
@@ -65,7 +66,7 @@
         <div id="burgerAdd">
         <div id="input">
             <h2>Add a burger:</h2>
-            <form class="create-update-form" action="burgers/create" method="POST">
+            <form class="createBurg" action="burgers/create" method="POST">
 
             <div class="form-group">
                 <label for="ca">Burger Name:</label>
@@ -77,5 +78,13 @@
         </div>
         </div>
     </div>    
+</div>
+<div class="row" id="footie">
+    <div class="col-md-12">
+        <footer >
+            <p>check out my Portfolio!<a href="https://bmdito.github.io/my-portfolio/"></a></p>
+            
+        </footer>
+    </div>
 </div>
 </div>
