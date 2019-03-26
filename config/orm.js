@@ -48,19 +48,19 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+  insertOne: function(table, burger_name, cb) {
+    var queryString = "INSERT INTO " + table + " (burger_name) VALUES ('" + burger_name + "')";
 
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
-    queryString += ") ";
+    // queryString += " (";
+    // queryString += cols.toString();
+    // queryString += ") ";
+    // queryString += "VALUES (";
+    // queryString += printQuestionMarks(vals.length);
+    // queryString += ") ";
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
@@ -69,21 +69,22 @@ var orm = {
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  updateOne: function(table, objColVals, condition, cb) {
+  updateOne: function(table, obj, condition, cb) {
     var queryString = "UPDATE " + table;
+    // + " SET devoured = true WHERE " + condition;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += objToSql(obj);
     queryString += " WHERE ";
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function(err, results) {
       if (err) {
         throw err;
       }
 
-      cb(result);
+      cb(results);
     });
   },
   delete: function(table, condition, cb) {

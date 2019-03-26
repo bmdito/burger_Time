@@ -1,3 +1,40 @@
 body {
     background-color: lightblue;
 }
+
+button {
+    background-color:green;
+}
+#title {
+    text-align:center;
+    margin-top:25px;
+    margin-bottom:20px;
+}
+ul {
+    list-style-type:none;
+}
+
+li{
+    background-color:white;
+}
+#burgHit, #burgEat{
+    text-align:center;
+}
+
+#burgerHit {
+    
+}
+#pic{
+   
+    width:100%;
+   
+    
+}
+#burgerEat{
+   
+}
+
+#burgerAdd{
+    text-align:center;
+}
+
